@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mini_arm_URDF_V14">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0152120809406327 0.000125308682310796 0.0441924512930378"
+        rpy="0 0 0" />
+      <mass
+        value="0.230341684406546" />
+      <inertia
+        ixx="7.89352916848205E-05"
+        ixy="2.59676823376343E-09"
+        ixz="1.82301660338588E-06"
+        iyy="0.000121541815163212"
+        iyz="4.42684608393501E-09"
+        izz="0.000136369063275366" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-3.03489468325424E-05 0.000203216825615873 -0.0181222018654437"
+        rpy="0 0 0" />
+      <mass
+        value="0.0980001989680498" />
+      <inertia
+        ixx="4.86579306654222E-05"
+        ixy="-2.30135830707563E-09"
+        ixz="2.64800242218561E-09"
+        iyy="3.95095619287588E-05"
+        iyz="-1.0228195921488E-06"
+        izz="2.78748007098524E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="continuous">
+    <origin
+      xyz="0.00016 0.0001 0.161"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.196553646392586 0.000111939565813846 0.000304573079595583"
+        rpy="0 0 0" />
+      <mass
+        value="0.192278578393887" />
+      <inertia
+        ixx="3.35627741623593E-05"
+        ixy="2.13102678390393E-09"
+        ixz="-1.02281960486398E-06"
+        iyy="0.000239124991608248"
+        iyz="-2.36082574205795E-09"
+        izz="0.000232759388005939" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="-0.0140743512658671 0.0511639166532189 0.000352319808974155"
+        rpy="0 0 0" />
+      <mass
+        value="0.135305163576337" />
+      <inertia
+        ixx="3.80722867520779E-05"
+        ixy="-7.89252731423858E-07"
+        ixz="-1.64847431220499E-09"
+        iyy="6.33852770559708E-05"
+        iyz="2.30135907523564E-09"
+        izz="6.60571926811448E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="continuous">
+    <origin
+      xyz="0.294 0.00025 0.00025"
+      rpy="0 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-0.000116543154638715 8.4229187569132E-05 -0.0688706146611671"
+        rpy="0 0 0" />
+      <mass
+        value="0.161294579176152" />
+      <inertia
+        ixx="0.000127874578310383"
+        ixy="-2.30111808684093E-09"
+        ixz="2.13104631082741E-09"
+        iyy="0.000122983723606402"
+        iyz="-1.02281959731175E-06"
+        izz="3.09752956711605E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="continuous">
+    <origin
+      xyz="0.00025 0.302 0.00025"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="-0.0140743512658674 0.0511639166532187 -0.000147680191025901"
+        rpy="0 0 0" />
+      <mass
+        value="0.135305163576337" />
+      <inertia
+        ixx="3.80722867520779E-05"
+        ixy="-7.89252731424249E-07"
+        ixz="-1.64847431221257E-09"
+        iyy="6.33852770559708E-05"
+        iyz="2.30135907523702E-09"
+        izz="6.60571926811449E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link5" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="llink7">
+    <inertial>
+      <origin
+        xyz="8.93729534823251E-15 0.000150000000000386 0.115858466923271"
+        rpy="0 0 0" />
+      <mass
+        value="0.0276776786723322" />
+      <inertia
+        ixx="1.14698847537059E-05"
+        ixy="-8.39186014611805E-17"
+        ixz="1.91206092312946E-20"
+        iyy="1.00698847537059E-05"
+        iyz="-4.56358220931152E-20"
+        izz="5.14105455188229E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/llink7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_arm_URDF_V14/meshes/llink7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint7"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link6" />
+    <child
+      link="llink7" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
