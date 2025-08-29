@@ -4,7 +4,7 @@ import pybullet_data
 def init_simulation(gui=True):
     physicsClient = p.connect(p.GUI if gui else p.DIRECT)
     p.setAdditionalSearchPath(pybullet_data.getDataPath())
-    # 讓你原本的本地 URDF 路徑也被搜尋到
+    # 讓本地 URDF 路徑也被搜尋到
     p.setAdditionalSearchPath("./mini_arm_URDF_V14")
     p.setGravity(0, 0, -9.81)
     p.configureDebugVisualizer(p.COV_ENABLE_GUI, 1)
@@ -30,3 +30,4 @@ def load_robot():
             continue
     print("Using KUKA as fallback")
     return p.loadURDF("kuka_iiwa/model.urdf", [0, 0, 0], useFixedBase=True)
+
