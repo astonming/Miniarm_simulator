@@ -10,7 +10,7 @@ class MiniArmVelocityController:
     def __init__(self):
         print("Initializing Mini Arm with improved velocity control...")
 
-        # 控制參數
+    
         self.joint_speed_max_ = 3.0  # rad/s
         self.linear_thresh_mm_ = 1.0  # mm
         self.angular_thresh_ = 0.01   # rad
@@ -19,20 +19,14 @@ class MiniArmVelocityController:
         self.ki_gain_ = 0.1
         self.lambda_dls_ = 0.05
         self.dt_ = 0.02
-
-        # 狀態
         self.q_ = np.zeros(6, dtype=np.float32)
         self.current_position_ = np.zeros(3, dtype=np.float32)
         self.current_orientation_ = np.zeros(3, dtype=np.float32)
         self.J_ = np.zeros((6, 6), dtype=np.float32)
         self.error_integral_ = np.zeros(6, dtype=np.float32)
         self.max_integral_ = 10.0
-
-        # 模擬與機器人
         self.physicsClient, self.planeId = init_simulation(gui=True)
         self.robotId = load_robot()
-
-        # 關節與末端
         self.joint_indices = []
         self.joint_names = []
         for i in range(p.getNumJoints(self.robotId)):
@@ -45,17 +39,11 @@ class MiniArmVelocityController:
         self.end_effector_index = self.joint_indices[-1] if self.joint_indices else p.getNumJoints(self.robotId) - 1
         print(f"End-effector link index: {self.end_effector_index}")
         print(f"Found {len(self.joint_indices)} controllable joints: {self.joint_names}")
-
-        # 初始姿勢
         self._set_initial_pose()
-        self._update_joint_states()
-
-        # 模擬執行緒
+        self._update_joint_states()     
         self.running = True
         self.sim_thread = threading.Thread(target=self._simulation_loop, daemon=True)
         self.sim_thread.start()
-
-        # 初始運動學
         self.computeKinematicsAndJacobian()
         print(f"Mini Arm initialized. Position: ({self.current_position_[0]:.1f}, {self.current_position_[1]:.1f}, {self.current_position_[2]:.1f}) mm")
 
@@ -339,3 +327,4 @@ class MiniArmVelocityController:
                 p.disconnect(self.physicsClient)
             except:
                 pass
+
